@@ -6,10 +6,10 @@ class Vec2:
     y: float = 0
 
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
+        self.x = float(x)
+        self.y = float(y)
 
-    def length(self):
+    def length(self) -> float:
         return math.sqrt(self.x**2 + self.y**2)
 
     # define overload for + operator
@@ -26,11 +26,11 @@ class Vec2:
 
     # define overload for != operator
     def __ne__(self, other):
-        return self.x != other.m_x and self.y != other.y
+        return not (self == other)
 
     def __str__(self):
         return f'[x: {self.x}, y: {self.y}]'
 
     #here are real functions
-    def normalize(self, other):
-        return Vec2(self.x/self.length, self.y/self.length)
+    def normalize(self):
+        return Vec2(self.x/self.length(), self.y/self.length())
