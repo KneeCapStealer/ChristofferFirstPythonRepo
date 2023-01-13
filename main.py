@@ -22,11 +22,12 @@ if __name__ == '__main__':
     while True:
         match input():
             case '--Help':
-                print('--Add\nlægger de 2 vektore sammen\n\n'
-                      '--Subtract\ntrækker de 2 vektore fra \n\n'
-                      '--AreEqual\ntjækker om de 2 vektore er ens\n\n'
-                      '--AreNEqual\ntjækker om de 2 vektore ikke er ens\n\n'
-                      '--Normalize\nreducere eller øjer en vektors længde til 1\n\n'
+                print('--Add\nLægger de 2 vektore sammen\n\n'
+                      '--Subtract\nTrækker de 2 vektore fra \n\n'
+                      '--AreEqual\nTjekker om de 2 vektore er ens\n\n'
+                      '--AreNEqual\nTjekker om de 2 vektore ikke er ens\n\n'
+                      '--Normalize\nReducere eller øjer en vektores længde til 1\n\n'
+                      '--Length\n Find længden på en vektor'
                       'Hvordan lukker man programmet? Do you know how to exit vim?\n')
 
             case '--Add':
@@ -50,14 +51,28 @@ if __name__ == '__main__':
                                   'Skriv enten 1 eller 2\n')
                 if chosenVec == '1':
                     print(f'Vektor1 = {vector1}\n'
-                          f'Vektor1.Normalize = {vector1.normalize()}\n')
+                          f'Vektor1.normalize() = {vector1.normalize()}\n')
 
                 elif chosenVec == '2':
                     print(f'Vektor1 = {vector1}\n'
-                          f'Vektor1.Normalize = {vector1.normalize()}\n')
+                          f'Vektor1.normalize() = {vector1.normalize()}\n')
 
                 else:
-                    print('Ikke valid vektor index')
+                    print(f'{chosenVec} er ikke valid vektor index')
+
+            case 'Length':
+                chosenVec = input('Vælg en vektor du vil vide længden på\n'
+                                  'Skriv enten 1 eller 2\n')
+                if chosenVec == '1':
+                    print(f'Vektor1 = {vector1}\n'
+                          f'Vektor1.length() = {vector1.length()}\n')
+
+                elif chosenVec == '2':
+                    print(f'Vektor1 = {vector1}\n'
+                          f'Vektor1.length() = {vector1.length()}\n')
+
+                else:
+                    print(f'{chosenVec} er ikke valid vektor index')
 
             case ':q':
                 break
