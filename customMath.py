@@ -1,6 +1,6 @@
 import math
 
-#Vec2 classen er lavet i collab med Atle
+#Vec2 classen er lavet i collab med Atle imens vi fjollede rundt med sproget. Den var for god til at efterlade xD
 class Vec2:
     x: float = 0
     y: float = 0
