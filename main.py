@@ -34,7 +34,8 @@ if __name__ == '__main__':
 
     print('Type --Help nu for at få en liste over functioner')
 
-    while True:
+    running = True
+    while running:
         match input():
             case '--Help':
                 print('--Add\nLægger de 2 vektore sammen\n\n'
@@ -90,8 +91,9 @@ if __name__ == '__main__':
                     print(f'{chosenVec} er ikke valid vektor index')
 
             case ':q':
-                break
+                running = False
 
+            # default
             case _:
                 print('Du har skrevet noget forkert....')
 
