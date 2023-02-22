@@ -1,32 +1,34 @@
 from customMath import *
 
+
+def safe_float_input(message="") -> float:
+    try:
+        return float(input(message))
+
+    except ValueError:
+        print("This is not a valid Value\n")
+        safe_float_input(message)
+
+    except:
+        print("Unknown error I'm not smart enough\n")
+        safe_float_input(message)
+
+
 # har hørt somewhere this is good practise #Dengelsk
 if __name__ == '__main__':
     print('I mit program skal du nu lave 2 2D vektore og manipulere dem')
 
-    while True:
-        try:
-            print('Lav din først vector')
-            input1 = float(input('første tal: '))
-            input2 = float(input('andet tal: '))
-            vector1 = Vec2(input1, input2)
-            break
-
-        except:
-            print("-----------------\nVærdier skal være tal\n-----------------")
+    print('Lav din først vector')
+    input1 = safe_float_input('første tal: ')
+    input2 = safe_float_input('andet tal: ')
+    vector1 = Vec2(input1, input2)
 
     print(f'du har nu lavet en vector med dataen: {vector1}')
 
-    while True:
-        try:
-            print('din anden vector: ')
-            input1 = float(input('første tal: '))
-            input2 = float(input('andet tal: '))
-            vector2 = Vec2(input1, input2)
-            break
-
-        except:
-            print("-----------------\nVærdier skal være tal\n-----------------")
+    print('din anden vector: ')
+    input1 = safe_float_input('første tal: ')
+    input2 = safe_float_input('andet tal: ')
+    vector2 = Vec2(input1, input2)
 
     print(f'du har nu lavet endnu en vector med dataen: {vector2}')
 
